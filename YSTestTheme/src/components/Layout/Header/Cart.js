@@ -11,10 +11,10 @@ const Cart = () => {
 	return(
 	  <div className="cart">
       <Link to={urlGenerator.get({page:'cart'})}>
-        <a>
-          <div className="cart-icon-container">
+        <a>장바구니
+          {/* <div className="cart-icon-container">
             <Icon name="cart.svg" width="23px" height="21px" className="cart-icon" />
-          </div>
+          </div> */}
         </a>
       </Link>
     </div>

@@ -43,7 +43,7 @@ class Company extends Component {
         >
           {/*<i className="fas fa-user fa-lg"></i>*/}
           <div className="profile-icon-container">
-            <Icon name="company.svg" width="20px" height="20px" className="profile-icon" />
+            <span>고객센터</span>{/* <Icon name="company.svg" width="20px" height="20px" className="profile-icon" /> */}
           </div>
         </DropdownToggle>
         <DropdownMenu right>

@@ -1,5 +1,12 @@
 .cart {
+  margin-right: 25px;
+  a, a:hover {
+    color: var(--text-color-ultra-dark);
+    text-decoration: none !important;
+  }
+  
   .cart-icon {
     stroke: var(--text-color-header);
   }
+  
 }

@@ -52,7 +52,8 @@ class Profile extends Component {
         >
           {/*<i className="fas fa-user fa-lg"></i>*/}
           <div className="profile-icon-container">
-            <Icon name="user.svg" width="20px" height="20px" className="profile-icon" />
+            <span>마이페이지</span>
+            {/* <Icon name="user.svg" width="20px" height="20px" className="profile-icon" /> */}
             {
               pendingApprovalOrderCount > 0 &&
               <div className="notification-icon" >
