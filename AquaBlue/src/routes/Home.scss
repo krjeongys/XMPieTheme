@@ -1,0 +1,90 @@
+@import '_theme.scss';
+
+.home{
+  .middle-section {
+    margin: 0 auto;
+
+    @media (min-width: $lg) {
+      width: 1160px;
+    }
+
+    @media (min-width: $md) and (max-width: $lg) {
+      width: 727px;
+    }
+
+    @media (min-width: $sm) and (max-width: $md) {
+      width: 536px;
+    }
+
+    @media (min-width: $xs) and (max-width: $sm) {
+      width: 300px;
+    }
+  }
+
+  .categories-wrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: $xl) {
+      padding: 55px 0px 12px 0px;
+    }
+  
+    @media (min-width: $lg) and (max-width: $xl) {
+      padding: 55px 0px 12px 0px;
+    }
+  
+    @media (min-width: $md) and (max-width: $lg) {
+      padding: 40px 0px 12px 0px;
+    }
+  
+    @media (min-width: $sm) and (max-width: $md) {
+      padding: 40px 0px 12px 0px;
+    }
+  
+    @media (min-width: $xs) and (max-width: $sm) {
+      padding: 40px 0px 12px 0px;
+    }
+  
+    @media (max-width: $xs) {
+      padding: 40px 0px 12px 0px;
+    }
+  }
+
+  .divider{
+    height: 1px;
+    margin: 0 auto;
+    background: var(--color-line);   
+  }
+
+  .featured-products-wrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: $xl) {
+      padding: 55px 0px;
+    }
+  
+    @media (min-width: $lg) and (max-width: $xl) {
+      padding: 55px 0px;
+    }
+  
+    @media (min-width: $md) and (max-width: $lg) {
+      padding: 40px 0px;
+    }
+  
+    @media (min-width: $sm) and (max-width: $md) {
+      padding: 40px 0px;
+    }
+  
+    @media (min-width: $xs) and (max-width: $sm) {
+      padding: 40px 0px;
+    }
+  
+    @media (max-width: $xs) {
+      padding: 40px 0px;
+    }
+  }
+}
+
+
+

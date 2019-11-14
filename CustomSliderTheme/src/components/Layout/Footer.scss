@@ -1,0 +1,34 @@
+@import "_theme.scss";
+
+.footer {
+  position: relative;
+  background-color: var(--footer-background-color);
+  height: var(--footer-height);
+  font-size: var(--text-size-regular);
+  width: 100%;
+  color: var(--footer-text-color);
+  padding: 40px 145px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .footer-column {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: $lg) {
+    display: none;
+  }
+}

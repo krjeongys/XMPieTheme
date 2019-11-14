@@ -1,0 +1,100 @@
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap'
+import Icon from '$core-components/Icon'
+import './Search.scss'
+import urlGenerator from '$ustoreinternal/services/urlGenerator'
+import { Router } from '$routes'
+import {withRouter} from 'next/router'
+import React from 'react';
+import {withState} from '$ustoreinternal/services/withState'
+import {t} from '$themelocalization'
+
+/**
+ * This component represents the search text box in the header
+ * When searching - the store redirects to the 'Search' page with results from the input
+ *
+ * @param {object} customState - custom state of store
+ */
+class Search extends React.Component {
+  state = {
+    searchValue: ''
+  }
+
+  constructor(props) {
+    super(props);
+    this.onSearchClicked = this.onSearchClicked.bind(this)
+    this.onKeyPress = this.onKeyPress.bind(this)
+  }
+
+  setSearchValue() {
+    if(!this.props.router) {
+      return;
+    }
+    
+    const {router: {asPath, query}} = this.props
+
+    const searchValue = (asPath && asPath.indexOf('/search/') > -1) ? query.id : ''
+    this.setState({searchValue})
+  }
+
+  onSearchClicked(){
+    let value = this.escapeValue(this.input.value)
+    if(value.length > 0) {
+      Router.pushRoute(urlGenerator.get({ page: 'search', id: decodeURIComponent(value)}))
+    }
+  }
+
+  escapeValue(value){
+    if(!value){
+      return ''
+    }
+
+    let newValue = value.replace("''", "'").replace("'", "''")
+    const illegalCharList = ["&", ":", "<", ">", "*", "?", "/", "\\", ".", "%","#"]
+    illegalCharList.forEach((char)=>{
+      newValue = newValue.replace(char," ")
+    })
+    return newValue.trim()
+  }
+
+  onKeyPress = (event) => {
+    if (event.key  === 'Enter') {
+      this.onSearchClicked()
+      event.preventDefault();
+    }
+  }
+
+  onChange = (e) => {
+    this.setState({searchValue: e.target.value})
+  }
+
+  onRouteComplete = (url) => {
+    this.setSearchValue()
+  }
+
+  componentWillMount() {
+    Router.events.on('routeChangeComplete', this.onRouteComplete)
+    this.setSearchValue()
+  }
+
+  componentWillUnmount() {
+    Router.events.off('routeChangeComplete', this.onRouteComplete)
+  }
+
+  render() {
+    return <div className="search">
+      <InputGroup size="normal">
+        <input type="text" className="search-input form-control"
+               value={this.state.searchValue}
+               placeholder={t('Search.Search_Products')}
+               ref={(userInput) => this.input = userInput}
+               onChange={this.onChange}
+               onKeyPress={this.onKeyPress}/>
+        <InputGroupAddon className="search-button" addonType="append" onClick={this.onSearchClicked}>
+          <div className="search-icon-container"><Icon name="search.svg" className="search-icon" width="21px" height="21px"/></div>
+        </InputGroupAddon>
+      </InputGroup>
+    </div>
+  }
+}
+
+export default withRouter(withState(Search))
