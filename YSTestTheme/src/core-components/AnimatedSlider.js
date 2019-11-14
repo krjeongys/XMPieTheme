@@ -37,11 +37,11 @@ const AnimatedSlider = () => {
                             className="slider-content"
                             style={{ background: `url('${item.image}') no-repeat center center` }}
                         >
-                            <div className="inner" visibility="hidden">
+                            {/* <div className="inner">
                                 <h1>{item.title}</h1>
                                 <p>{item.description}</p>
                                 <button>{item.button}</button>
-                            </div>
+                            </div> */}
                         </div>
                     ))}
                 </Slider>
