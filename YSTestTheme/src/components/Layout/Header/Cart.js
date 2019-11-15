@@ -1,4 +1,4 @@
-import './Cart.scss'
+// import './Cart.scss'
 import urlGenerator from '$ustoreinternal/services/urlGenerator'
 import {Link} from '$routes'
 import Icon from '$core-components/Icon'

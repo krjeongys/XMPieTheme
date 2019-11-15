@@ -174,7 +174,15 @@ class Header extends Component {
 
     return (
       <div className='header'>
+        <div className="right-icons-top">
+          <Cart />
+          <span className='gnb_bar'></span>
+          {currentUser && <Profile currentUser={currentUser} userOrdersSummary={userOrdersSummary} /> }
+          <span className='gnb_bar'></span>
+          <Company />
+        </div>
         <div className='header-stripe' ref={(ref) =>this.header = ref} draweropen={`${this.state.drawerOpen}`}>
+                    
           <div className="logo-wrapper">
             <div className="menu-icon-container" onClick={this.burgerClicked.bind(this)}>
               <Icon name="menu.svg" width="23px" height="20px" className="menu-icon" />
@@ -192,27 +200,15 @@ class Header extends Component {
             <CategoriesNavbar categoriesTree={categoriesTree}/>
           }
           <Search />
-          <div className="right-icons">
+
+          <div className="right-icons-inner">
             <Cart />
-            {/* {culturesViewModel && culturesViewModel.length > 0 &&
-            <Switcher
-              className="culture"
-              items={culturesViewModel}
-              selected={currentCulture && culturesViewModel.find((element)=>{return currentCulture.ID === element.ID})}
-              label={t('Header.Language')}
-              onSelected={cultureSelected}/>
-            }
-            {currenciesViewModel && currenciesViewModel.length > 0 &&
-            <Switcher
-              className="currency"
-              items={currenciesViewModel}
-              selected={currentCurrency && currenciesViewModel.find((element)=>{return currentCurrency.ID === element.ID})}
-              label={t('Header.Currency')}
-              onSelected={currencySelected}/>
-            } */}
-			      {currentUser && <Profile currentUser={currentUser} userOrdersSummary={userOrdersSummary} /> }
+            <span className='gnb_bar'></span>
+            {currentUser && <Profile currentUser={currentUser} userOrdersSummary={userOrdersSummary} /> }
+            <span className='gnb_bar'></span>
             <Company />
           </div>
+
           <div className="drawer-wrapper">
             {currenciesViewModel && currenciesViewModel.length > 0 &&
             <Switcher
@@ -235,6 +231,7 @@ class Header extends Component {
               <CategoriesSidebar categoriesTree={categoriesTree} onRedirect={sidebarRedirect}/>
             }
             {currentUser && <SignOut currentUser={currentUser}/>}
+
           </div>
           <Overlay isActive={this.state.overlayActive} overlayClicked={this.overlayClicked.bind(this)}/>
         </div>
