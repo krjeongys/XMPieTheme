@@ -92,9 +92,10 @@ class Home extends Component {
 		debugger;
 
 		let randomProductArr = null;
-		if ( homeFeaturedProducts && homeFeaturedProducts.length >= 6 )
+		
+		if ( homeFeaturedProducts && homeFeaturedProducts.length >= 6 )//전체 상품에 6개 이상 있어야 보여짐
 		{
-			const randomProductIndexArr = [0, 2, 3, 5];
+			const randomProductIndexArr = [0, 2, 3, 5]; //배열 번호에 있는 상품만 나옴
 			randomProductArr = [];
 			randomProductIndexArr.forEach(index => {
 				randomProductArr.push(homeFeaturedProducts[index]);
@@ -223,8 +224,8 @@ Home.getInitialProps = async function (ctx) {
 		return { homeFeaturedProducts: null, homeFeaturedCategory: null }
 	}
 
-	const allProductCategory = Categories[Count - 3]
-	const newProductCategory = Categories[Count - 2];
+	const allProductCategory = Categories[Count - 2]
+	const newProductCategory = Categories[Count - 1];
 
 	const homeFeaturedCategory = allProductCategory;
 

@@ -21,6 +21,7 @@
   --carousel-height-desktop: 600px;
   --carousel-height-mobile: calc(var(--carousel-height-desktop)*0.75);
   --text-color-carousel:  #000000;
+  --main-content-background-color: #f1f1f3;
   --footer-background-color: #000000;
   --footer-text-color:  #ffffff;
   --category-image-height: 180px;

@@ -29,12 +29,15 @@
   }
 
   .product-price{
+    text-align: right;
     padding: 5px 10px 15px;
-    color: var(--color-highlight);
+    color:black;
     
     .price {
+      font-size: 2em;
+      font-family: Tahoma,sans-serif;
       font-weight: bold;
-      font-size: 1.4em;
+      letter-spacing: 0;
     }
     .currency-symbol{
       font-size: 1.2em;
