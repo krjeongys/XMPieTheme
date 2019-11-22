@@ -41,10 +41,14 @@
   .main > * {
     flex-basis: var(--flex-basis);
   }
-
+  
   .main {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
+
+    margin-top: 30px;
+
   }
 
   .bottom > .button-secondary {
@@ -59,100 +63,42 @@
       }
   }
 
-  @media (min-width: $xl) {
-    --flex-basis: 25%;
 
-    .main > *:nth-child(4n+1) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 0;
-    }
 
-    .main > *:nth-child(4n+2) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 10px;
-    }
-
-    .main > *:nth-child(4n+3) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 10px;
-    }
-
-    .main > *:nth-child(4n+4) {
-      padding-top: 20px;
-      padding-right: 0;
-      padding-bottom: 20px;
-      padding-left: 10px;
-    }
+  // @media (min-width: $xl) {
+  //   --flex-basis: 24%;
+ 
+  //   .main > *{
+  //     margin-bottom: 15px;
+  //     height: auto;
+  //   }
     
-    .bottom {
-      padding: 0px 10px;
-    }
-  }
+  //   .bottom {
+  //     padding: 0px 10px;
+  //   }
+  // }
   
-  @media (min-width: $lg) and (max-width: $xl) {
-    --flex-basis: 25%;
+  @media (min-width: $lg) {
+    --flex-basis: 24%;
     
-    .main > *:nth-child(4n+1) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 0;
-    }
-
-    .main > *:nth-child(4n+2) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 10px;
-    }
-
-    .main > *:nth-child(4n+3) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 10px;
-    }
-
-    .main > *:nth-child(4n+4) {
-      padding-top: 20px;
-      padding-right: 0;
-      padding-bottom: 20px;
-      padding-left: 10px;
+    .main > *{
+      margin-bottom: 15px;
+      height: auto; 
+    
     }
     
     .bottom {
-      padding: 0px 10px;
+      //padding: 0px 10px;
     }
+
   }
   
   @media (min-width: $md) and (max-width: $lg) {
-    --flex-basis: 33.333%;
+    --flex-basis: 32%;
 
-    .main > *:nth-child(3n+1) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 0;
-    }
-
-    .main > *:nth-child(3n+2) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 10px;
-    }
-
-    .main > *:nth-child(3n+3) {
-      padding-top: 20px;
-      padding-right: 0;
-      padding-bottom: 20px;
-      padding-left: 10px;
+    .main > *{
+      margin-bottom: 15px;
+      height: auto;
     }
     
     .bottom {
@@ -160,21 +106,12 @@
     }
   }
   
-  @media (min-width: $sm) and (max-width: $md) {
-    --flex-basis: 50%;
+  @media (max-width: $md) {
+    --flex-basis: 49%;
 
-    .main > *:nth-child(2n+1) {
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 20px;
-      padding-left: 0;
-    }
-
-    .main > *:nth-child(2n+2) {
-      padding-top: 20px;
-      padding-right: 0;
-      padding-bottom: 20px;
-      padding-left: 10px;
+    .main > *{
+      margin-bottom: 15px;
+      height: auto;
     }
 
     .bottom {
@@ -182,43 +119,26 @@
     }
   }
   
-  @media (min-width: $xs) and (max-width: $sm) {
-    --flex-basis: 50%;
+  // @media (min-width: $xs) and (max-width: $sm) {
+  //   --flex-basis: 50%;
     
-    .main > *:nth-child(2n+1) {
-      padding-top: 20px;
-      padding-right: 5px;
-      padding-bottom: 20px;
-      padding-left: 0;
-    }
-
-    .main > *:nth-child(2n+2) {
-      padding-top: 20px;
-      padding-right: 0;
-      padding-bottom: 20px;
-      padding-left: 5px;
-    }
-
-    .bottom {
-      padding: 0px 5px;
-    }
-  }
+  //   .main > *{
+  //     margin-bottom: 15px;
+  //     height: auto;
+  //   }
+    
+  //   .bottom {
+  //     padding: 0px 5px;
+  //   }
+  // }
   
-  @media (max-width: $xs) {
-    --flex-basis: 50%;
+  // @media (max-width: $xs) {
+  //   --flex-basis: 50%;
     
-    .main > *:nth-child(2n+1) {
-      padding-top: 20px;
-      padding-right: 5px;
-      padding-bottom: 20px;
-      padding-left: 0;
-    }
+  //   .main > *{
+  //     margin-bottom: 15px;
+  //     height: auto;
+  //   }
 
-    .main > *:nth-child(2n+2) {
-      padding-top: 20px;
-      padding-right: 0;
-      padding-bottom: 20px;
-      padding-left: 5px;
-    }
-  }
+  // }
 }

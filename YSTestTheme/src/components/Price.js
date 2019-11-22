@@ -19,7 +19,7 @@ const Price = ({ model, isMinimumPrice, state }) => {
 
   let formatParams = {
     taxFormat: currentStore.TaxFormat,
-    symbol: currentCurrency.Symbol,
+    symbol: '',//currentCurrency.Symbol,
     code: currentCurrency.Code,
     currencyFormat: currentCulture.CurrencyFormat,
     decimalSeparator: currentCulture.DecimalSeparator,
@@ -39,11 +39,12 @@ const Price = ({ model, isMinimumPrice, state }) => {
   // new Intl.NumberFormat(currentCulture.LanguageCode).format(priceDisplayString)
   return (
     <span className="price-display">
+      <span className="price">{priceDisplayString}</span>
+      <span className="currency-symbol">원</span>
       {
         isMinimumPrice &&
-        <span className="minimum-price-notation">{t('ProductItem.From_Price')}<span>&nbsp;</span></span>
+        <span className="minimum-price-notation">~<span>&nbsp;</span></span>
       }
-      <span className="price">{priceDisplayString} {formatParams.code}</span>
     </span>
   )
 }

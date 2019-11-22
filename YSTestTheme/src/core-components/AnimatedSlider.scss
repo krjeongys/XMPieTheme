@@ -3,7 +3,7 @@
     .slider {
         position: relative;
         width: 100%;
-        height: 400px;
+        //height: 400px;
         overflow: hidden
     }
     
@@ -42,7 +42,7 @@
     
     .slide {
         width: 100%;
-        height: 100%;
+        //height: 400px;
         position: absolute;
         overflow: hidden
     }
@@ -172,12 +172,12 @@
 
     .slider-wrapper {
         position: relative;
-        height: 70vh;
+        height: 45vh;
         overflow: hidden;
     }
 
     .slide {
-        height: 70vh;
+        height: 45vh;
         background-size: cover !important;
     }
 
@@ -300,13 +300,13 @@
 
     @media (max-height: 500px) {
     .slider-wrapper, .slide {
-            height: calc(100vh - 75px);
+            height: 45vh;//calc(100vh - 75px);
         }    
     }
 
     @media (max-width: 640px) {
     .slider-wrapper, .slide {
-            height: calc(80vh - 75px);
+            height: 45vh;//calc(80vh - 75px);
         }    
     }
 

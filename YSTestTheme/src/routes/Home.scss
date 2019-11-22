@@ -2,10 +2,11 @@
 
 .home{
   .middle-section {
+    //background-color:;
     margin: 0 auto;
 
     @media (min-width: $lg) {
-      width: 1160px;
+      width: 1200px;
     }
 
     @media (min-width: $md) and (max-width: $lg) {
@@ -23,7 +24,10 @@
 
   .categories-wrapper {
     width: 100%;
-    margin: 0 auto;
+    height: 30vh;
+    margin: 15px auto;
+    
+    background-color: #fff;
 
     @media (min-width: $xl) {
       padding: 55px 0px 12px 0px;
@@ -51,14 +55,25 @@
   }
 
   .divider{
-    height: 1px;
-    margin: 0 auto;
-    background: var(--color-line);   
+    //height: 1px;
+    //margin: 0 auto;
+    //background: var(--color-line);   
   }
 
   .featured-products-wrapper {
     width: 100%;
     margin: 0 auto;
+
+    .main-title{
+      color: var(--color-highlight);
+      font-weight: bold;
+    }
+
+    .see-all{
+      background-color: var(--button-primary-background-color);
+      color: #fff;
+    }
+
 
     @media (min-width: $xl) {
       padding: 55px 0px;

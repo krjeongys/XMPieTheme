@@ -56,6 +56,13 @@ const ProductItem = (props) => {
         <ResponsiveEllipsis text={productNameAndCatalog} maxLine={productNameLines} basedOn='words' />
       </div>
       {
+        detailed &&
+        <div className="product-description" style={{ maxHeight: `${descriptionLines * 1.5}em` }}>
+          <ResponsiveEllipsis text={model.ShortDescription} maxLine={descriptionLines} basedOn='words' />
+        </div>
+      }
+      
+      {
         (model.MinimumPrice) ?
           (
             <div>
@@ -69,12 +76,8 @@ const ProductItem = (props) => {
           ) : ''
       }
       <Inventory model={model.Inventory} minQuantity={model.MinimumQuantity} />
-      {
-        detailed &&
-        <div className="product-description" style={{ maxHeight: `${descriptionLines * 1.5}em` }}>
-          <ResponsiveEllipsis text={model.ShortDescription} maxLine={descriptionLines} basedOn='words' />
-        </div>
-      }
+      
+      
     </div>
   )
 }

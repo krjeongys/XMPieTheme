@@ -87,7 +87,8 @@ class Gallery extends Component {
 					}
 					{
 						showSeeAll &&
-						<Link to={seeAllUrl}><a className="see-all">{t('Gallery.See_all_products')}</a></Link>
+						// <Link to={seeAllUrl}><a className="see-all">{t('Gallery.See_all_products')}</a></Link>
+						<Link to={seeAllUrl}><a className="see-all button-primary">{t('Gallery.See_all_products')}</a></Link>
 					}
 				</div>
 				<div className="top">
